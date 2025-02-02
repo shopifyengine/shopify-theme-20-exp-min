@@ -5,3 +5,4 @@ Shopify Theme development then can follow the repository along with **Shopify En
 ## Branch Description
 
 * **main :** Merge all things into the main branch
+* **minimum :** Minimum version of a theme
