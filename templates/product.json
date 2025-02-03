@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "product-gallery": {
+      "type": "product-gallery"
+    },
+    "product-info": {
+      "type": "product-info"
+    }
+  },
+  "order": [
+    "product-gallery",
+    "product-info"
+  ]
+}

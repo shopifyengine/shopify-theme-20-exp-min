@@ -1,0 +1,22 @@
+<div class="cart-summary">
+    <h2>Order Summary</h2>
+    <p>Subtotal: {{ cart.total_price | money }}</p>
+
+    {% if cart.total_discount %}
+        <p>Discounts: -{{ cart.total_discount | money }}</p>
+        <p>Total: {{ cart.total_price | money }}</p>
+    {% endif %}
+
+    <a href="/checkout" class="checkout-button">Proceed to Checkout</a>
+</div>
+
+{% schema %}
+{
+  "name": "Cart Summary",
+  "presets": [
+    {
+      "name": "Cart Summary"
+    }
+  ]
+}
+{% endschema %}

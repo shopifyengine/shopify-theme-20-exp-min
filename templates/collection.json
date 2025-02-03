@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header"
+    },
+    "product-grid": {
+      "type": "collection-product-grid"
+    }
+  },
+  "order": [
+    "collection-header",
+    "product-grid"
+  ]
+}

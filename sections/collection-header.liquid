@@ -1,0 +1,18 @@
+<div class="collection-header">
+    <h1>{{ collection.title }}</h1>
+    {% if collection.image %}
+        <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection.title }}">
+    {% endif %}
+    <p>{{ collection.description }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Header",
+  "presets": [
+    {
+      "name": "Collection Header"
+    }
+  ]
+}
+{% endschema %}

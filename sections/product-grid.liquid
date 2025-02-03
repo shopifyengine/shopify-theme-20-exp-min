@@ -1,0 +1,22 @@
+<div class="product-grid">
+    {% for product in collections.all.products limit: 4 %}
+        <div class="product">
+            <a href="{{ product.url }}">
+                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                <h2>{{ product.title }}</h2>
+                <p>{{ product.price | money }}</p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}

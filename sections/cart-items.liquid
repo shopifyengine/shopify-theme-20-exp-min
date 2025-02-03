@@ -1,0 +1,42 @@
+<div class="cart-items">
+    <h1>Your Cart</h1>
+    {% if cart.items.size > 0 %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart.items %}
+                    <tr>
+                        <td>{{ item.title }}</td>
+                        <td>
+                            <input type="number" value="{{ item.quantity }}" min="1" class="quantity-input" data-line="{{ forloop.index }}">
+                        </td>
+                        <td>{{ item.price | money }}</td>
+                        <td>{{ item.final_line_price | money }}</td>
+                        <td><a href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Your cart is currently empty.</p>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Cart Items",
+  "presets": [
+    {
+      "name": "Cart Items"
+    }
+  ]
+}
+{% endschema %}

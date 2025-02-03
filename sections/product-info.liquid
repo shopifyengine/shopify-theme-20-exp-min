@@ -1,0 +1,34 @@
+<div class="product-info">
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.price | money }}</p>
+
+    {% if product.variants.size > 1 %}
+        <select name="id">
+            {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            {% endfor %}
+        </select>
+    {% else %}
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+    {% endif %}
+
+    <form method="post" action="/cart/add">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit">Add to Cart</button>
+    </form>
+
+    <div class="product-description">
+        {{ product.description }}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Info",
+  "presets": [
+    {
+      "name": "Product Info"
+    }
+  ]
+}
+{% endschema %}

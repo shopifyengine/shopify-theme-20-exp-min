@@ -1,0 +1,16 @@
+<div class="product-gallery">
+    {% for image in product.images %}
+        <img src="{{ image | img_url: 'large' }}" alt="{{ product.title }}">
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Gallery",
+  "presets": [
+    {
+      "name": "Product Gallery"
+    }
+  ]
+}
+{% endschema %}
